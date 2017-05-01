@@ -1,7 +1,7 @@
-#Piroxsi
+# Piroxsi
 
-##Network
-###Configure Network Interfaces
+## Network
+### Configure Network Interfaces
 /etc/network/interfaces
 
     auto lo
@@ -16,7 +16,7 @@
     
     iface wlan0 inet manual
     wpa-conf /etc/wpa_supplicant/wpa_supplicant.conf
-###Configure DHCP Server
+### Configure DHCP Server
 Install DHCP Server
 
 	apt-get install isc-dhcp-server
@@ -43,7 +43,7 @@ Enable DHCP Server
 	systemctl start isc-dhcp-server.service
 	systemctl enable isc-dhcp-server.service
 
-###Configure Firewall
+### Configure Firewall
 
 /etc/sysctl.conf
 
@@ -97,8 +97,8 @@ Make firewall executable
 	fi
 
 
-##Add Sources
-###Debian
+## Add Sources
+### Debian
 
 /etc/apt/sources.list
 
@@ -110,7 +110,7 @@ Add GPG Key
 	wget https://www.dotdeb.org/dotdeb.gpg
 	sudo apt-key add dotdeb.gpg
 
-###Raspbian
+### Raspbian
 
 /etc/apt/sources.list
 
@@ -122,12 +122,12 @@ Add GPG Key
 	sudo gpg --keyserver pgpkeys.mit.edu --recv-key CCD91D6111A06851
 	sudo gpg --armor --export CCD91D6111A06851 | sudo apt-key add -
 
-###Update Sources
+### Update Sources
 
 	apt-get update
 		
 
-##Configure Apache / PHP
+## Configure Apache / PHP
 
 	apt-get install apache2 php7.0 php7.0-cli php7.0-common php7.0-sqlite3 php7.0-zip php7.0-xml php7.0-mbstring libapache2-mod-php7.0
 
@@ -152,11 +152,11 @@ Enable mod_rewrite
 	a2enmod rewrite
 	service apache2 restart
 
-##Install Git
+## Install Git
 
 	apt-get install git
 
-##Install Composer
+## Install Composer
 
 	php -r "copy('https://getcomposer.org/installer', '/tmp/composer-setup.php');"
 	
@@ -168,7 +168,7 @@ Install
 	
 	sudo php /tmp/composer-setup.php --install-dir=/usr/local/bin --filename=composer
 
-##Install Redis
+## Install Redis
 
 	apt-get install build-essential
 	apt-get install tcl8.5
@@ -211,7 +211,7 @@ Install
 
 	su www-data -C '/usr/bin/supervisorctl start prioxsi-worker'
 
-##Install Piroxsi
+## Install Piroxsi
 
 Clone Repo
 	
