@@ -1,0 +1,2 @@
+#!/bin/bash
+/usr/sbin/openvpn --config $1 --redirect-gateway autolocal
